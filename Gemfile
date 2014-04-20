@@ -15,6 +15,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
+gem 'turbolinks'
 
 group :production do
   gem 'rails_12factor'
