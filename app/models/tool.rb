@@ -9,6 +9,8 @@ class Tool < ActiveRecord::Base
       secret_access_key: Rails.application.secrets[:aws_key]  
     }
 
+  belongs_to :user
+  
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   
 end
