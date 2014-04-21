@@ -11,14 +11,26 @@ describe 'tool index page' do
 
   end
 
-  context 'with tool listings' do
-    before do
-      create(:tool)
-    end
+  describe 'adding a listing' do
 
-    it 'should be able to create a post' do 
-      visit '/tools'
-      expect(page).to have_content('2 years old. Excellent working order.')
+    context 'logged out' do
+      it 'takes the user to the signed out page' do
+        visit '/tools'
+        click_link 'Loan your tools'
+        expect(current_path).to eq('/users/sign_in')
+        expect(page).to have_content('Sign in')
+      end
+    end
+  
+    context 'logged in' do
+      before do
+        create(:tool)
+      end
+
+      it 'should be able to create a post' do 
+        visit '/tools'
+        expect(page).to have_content('2 years old. Excellent working order.')
+      end
     end
   end
 

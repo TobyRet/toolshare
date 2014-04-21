@@ -5,6 +5,7 @@ class ToolsController < ApplicationController
   end
 
   def new
+    authenticate_user!
     @tool = Tool.new
   end
 
