@@ -1,6 +1,6 @@
 <div class="jumbotron homeimage">
   <h1>Brixton Toolshare</h1>
-  <p>DIY that's easier on your wallet</p>
+  <p>Borrow what you need, when you need it.</p>
   <p><%= link_to "Loan your tools", new_tool_path, class: "btn btn-primary btn-lg" %></p>
 </div>
 <div class = "row">
@@ -16,7 +16,7 @@
   					<div class="thumbnail">
 						<%= image_tag tool.picture.url(:medium), class: "uploaded-pic"%>
 						<div class="caption">
-							<h3><%= tool.title %></h3>
+							<h3><%= link_to tool.title, tool_path(tool) %></h3>
 							<%= tool.location %>   <span style="float:right">£<%= tool.price %>/hour</span>
 						</div>
 					</div>

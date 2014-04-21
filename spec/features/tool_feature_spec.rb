@@ -22,17 +22,26 @@ describe 'tool index page' do
       end
     end
   
-    context 'logged in' do
+    context 'with posts' do
+
       before do
         toby = create(:toby)
-        create(:tool, :toby)
+        create(:tool, user: toby)
       end
 
-      it 'should be able to create a post' do 
+      it 'should be able to view a thumbnail post on homepage' do 
         visit '/tools'
+        expect(page).to have_content('Hitachi Hammer Drill')
+      end
+
+      it 'should be able to full listing' do
+        visit 'tools'
+        click_link('Hitachi Hammer Drill')
         expect(page).to have_content('2 years old. Excellent working order.')
       end
+
     end
+
   end
 
 end
