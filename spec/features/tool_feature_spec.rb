@@ -24,7 +24,8 @@ describe 'tool index page' do
   
     context 'logged in' do
       before do
-        create(:tool)
+        toby = create(:toby)
+        create(:tool, :toby)
       end
 
       it 'should be able to create a post' do 
