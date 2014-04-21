@@ -1,2 +1,17 @@
-<h3><%= @tool.title %></h3>
-<%= @tool.body %>
+<div class = "row">
+	<div class="col-sm-8 col-md-8"> 
+		<div class = "thumbnail">
+			<h3><%= @tool.title %></h3>
+			<%= image_tag @tool.picture.url(:medium), class: "uploaded-pic"%>
+			<div class = "caption">
+				<%= @tool.body %>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4 col-md-4"> 
+		<div class = "thumbnail">
+			<p><%= @tool.location %></p>
+			<p><%= @tool.price %></p>
+		</div>
+	</div>
+</div>
