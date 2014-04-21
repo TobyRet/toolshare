@@ -1,0 +1,17 @@
+<%= form_for @tool do |f| %>
+
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :body %>
+	<%= f.text_area :body %>
+
+	<%= f.label :location %>
+	<%= f.text_field :location %>
+
+	<%= f.label :price %>
+	<%= f.number_field :price, step: 0.1 %>
+
+	<%= f.submit 'Submit' %>
+
+<% end %>

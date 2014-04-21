@@ -1,1 +1,10 @@
-No tools available yet
+<% if @tools.any? %>
+	<% @tools.each do |tool| %>
+		<h3><%= tool.title %></h3>
+		<p><%= tool.body %></p>
+		<p><%= tool.location %></p>
+		<p><%= tool.price %></p>
+	<% end %>
+<% else %>
+	<p>No tools available yet</p>
+<% end %>
