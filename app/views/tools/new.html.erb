@@ -12,6 +12,9 @@
 	<%= f.label :price %>
 	<%= f.number_field :price, step: 0.1 %>
 
+	<%= f.label :picture %>
+    <%= f.file_field :picture %>
+
 	<%= f.submit 'Submit' %>
 
 <% end %>

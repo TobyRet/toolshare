@@ -9,7 +9,7 @@ class ToolsController < ApplicationController
   end
 
   def create
-    @tool = Tool.new params[:tool].permit(:title, :body, :location, :price)
+    @tool = Tool.new params[:tool].permit(:title, :body, :location, :price, :picture)
     
     if @tool.save
       redirect_to '/tools'

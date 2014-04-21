@@ -1,6 +1,7 @@
 <% if @tools.any? %>
 	<% @tools.each do |tool| %>
 		<h3><%= tool.title %></h3>
+		<div><%= image_tag tool.picture.url(:medium), class: "uploaded-pic" %></div>
 		<p><%= tool.body %></p>
 		<p><%= tool.location %></p>
 		<p><%= tool.price %></p>
