@@ -1,20 +1,15 @@
-<%= form_for @tool do |f| %>
 
-	<%= f.label :title %>
-	<%= f.text_field :title %>
+<div class = "row">
+	<div class="col-sm-4 col-md-4 col-md-offset-4 col-sm-offset-4">
+		<h3>Hire out your tools</h3>
 
-	<%= f.label :body %>
-	<%= f.text_area :body %>
-
-	<%= f.label :location %>
-	<%= f.text_field :location %>
-
-	<%= f.label :price %>
-	<%= f.number_field :price, step: 0.1 %>
-
-	<%= f.label :picture %>
-    <%= f.file_field :picture %>
-
-	<%= f.submit 'Submit' %>
-
-<% end %>
+		<%= bootstrap_form_for @tool do |f| %>
+			<%= f.text_field :title %>
+			<%= f.text_area :body, label: "Description", placeholder: "Write about the tool" %>
+			<%= f.text_field :location %>
+			<%= f.number_field :price, step: 0.1 %>
+		    <%= f.file_field :picture %>
+			<%= f.submit 'Submit', class: "btn btn-default" %>
+		<% end %>
+	</div>
+</div>

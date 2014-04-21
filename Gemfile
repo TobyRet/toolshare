@@ -16,6 +16,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'turbolinks'
+gem 'bootstrap_form'
 
 group :production do
   gem 'rails_12factor'
