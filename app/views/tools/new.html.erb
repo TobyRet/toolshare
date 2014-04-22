@@ -6,8 +6,6 @@
 		<%= bootstrap_form_for @tool do |f| %>
 			<%= f.text_field :title %>
 			<%= f.text_area :body, label: "Description", placeholder: "Write about the tool" %>
-			<%= f.text_field :location %>
-			<%= f.number_field :price, step: 0.1 %>
 		    <%= f.file_field :picture %>
 			<%= f.submit 'Submit', class: "btn btn-default" %>
 		<% end %>
