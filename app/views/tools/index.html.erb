@@ -1,16 +1,19 @@
 <div class="jumbotron homeimage">
-  <h1>Brixton Toolshare</h1>
+  <h1>London Toolshare</h1>
   <p>Borrow what you need, when you need it.</p>
+  <p>Loan your tools. Make cash.</p>
   <p><%= link_to "Loan your tools", new_tool_path, class: "btn btn-primary btn-lg" %></p>
 </div>
 <div class = "row">
-	<div class="col-sm-6 col-md-6"> 
+	<div class="col-sm-6 col-md-6">
+		<h3>Find a ToolShare near you</h3> 
 		<div class="thumbnail map">
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19887.70572552538!2d-0.10972005000000452!3d51.45883179999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604393204f5d1%3A0xd929bf8f7af6c791!2sBrixton%2C+London!5e0!3m2!1sen!2suk!4v1398082492342" width="800" height="600" frameborder="0" style="border:0"></iframe>
 		</div>
 	</div>
 	<% if @tools.any? %>
 		<div class="row">
+			<h3>Latest Tools</h3>
 			<% @tools.each do |tool| %>
 				<div class="col-sm-3 col-md-3">
   					<div class="thumbnail">
