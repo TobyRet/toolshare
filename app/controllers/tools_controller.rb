@@ -11,10 +11,11 @@ class ToolsController < ApplicationController
   end
 
   def create
-    @tool = Tool.new params[:tool].permit(:title, :body, :location, :price, :picture)
+    @tool = Tool.new params[:tool].permit(:title, :body, :street, :city, :picture)
     @tool.user = current_user
     
     if @tool.save
+      @post.geocode
       redirect_to '/tools'
     else
       render 'new'

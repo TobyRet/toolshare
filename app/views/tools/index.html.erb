@@ -1,5 +1,5 @@
 <div class="jumbotron homeimage">
-  <h1>London Toolshare</h1>
+  <h1>Toolshare</h1>
   <p>Borrow what you need, when you need it.</p>
   <p>Loan your tools. Make cash.</p>
   <p><%= link_to "Loan your tools", new_tool_path, class: "btn btn-primary btn-lg" %></p>
@@ -20,6 +20,7 @@
 						<%= image_tag tool.picture.url(:medium), class: "uploaded-pic"%>
 						<div class="caption">
 							<h3><%= link_to tool.title, tool_path(tool) %></h3>
+							<%= tool.city %>
 						</div>
 					</div>
 				</div>

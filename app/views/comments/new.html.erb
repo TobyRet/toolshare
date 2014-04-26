@@ -1,0 +1,4 @@
+<%= boostrap_form_for [@tool, @comment] do |f| %>
+	<%= f.text_area :content, label: "Comment", placeholder: "Write your question or comment here"  %>
+	<%= f.submit 'Create Comment', class: 'btn btn-default' %>
+<% end %>

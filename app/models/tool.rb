@@ -10,7 +10,15 @@ class Tool < ActiveRecord::Base
     }
 
   belongs_to :user
+  has_many :comments
   
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
+
+  geocoded_by :address   
+  after_validation :geocode    
+
+  def address
+    [street, city].compact.join(', ')
+  end      
   
 end
