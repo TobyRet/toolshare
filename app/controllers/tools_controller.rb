@@ -15,7 +15,6 @@ class ToolsController < ApplicationController
     @tool.user = current_user
     
     if @tool.save
-      @post.geocode
       redirect_to '/tools'
     else
       render 'new'
@@ -24,6 +23,10 @@ class ToolsController < ApplicationController
 
   def show
     @tool = Tool.find params[:id]
+    respond_to do |format|
+      format.html
+      format.json { render json: @tool }
+    end
   end
   
 end

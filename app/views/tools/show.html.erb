@@ -1,16 +1,15 @@
 <div class = "row">
 	<div class="col-sm-8 col-md-8"> 
-		<div class = "thumbnail">
-			<h3><%= @tool.title %></h3>
-			<%= image_tag @tool.picture.url(:medium), class: "uploaded-pic"%>
-			<div class = "caption">
-				<%= @tool.body %>
-			</div>
+		<h3><%= @tool.title %></h3>
+		<%= image_tag @tool.picture.url(:medium), class: "uploaded-pic"%>
+		<div class = "caption">
+			<%= @tool.body %>
 		</div>
 	</div>
 	<div class="col-sm-4 col-md-4"> 
-		<div class = "thumbnail">
-			<p>Location info and map here</p>
+		<h3>Location</h3>
+		<div id ='map' data-tool-url=<%= tool_path(@tool, format: :json) %> >
 		</div>
 	</div>
 </div>
+

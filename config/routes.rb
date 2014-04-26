@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :tools
     resources :charges
-    resource :map
     resources :comments
 end
